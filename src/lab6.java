@@ -3,16 +3,8 @@ public class lab6 {
 
 
 	public static void main(String[] args) {
-		// Call the method
-		generateRandomDieRoll();
-
-
-	}
-
-	public static void generateRandomDieRoll() {
 		System.out.println("Welcome to the Grand Circus Casino!");
-		{
-		}
+
 		Scanner scan = new Scanner(System.in);
 		String userChoice;
 		int m = 1;
@@ -21,8 +13,9 @@ public class lab6 {
 		String answer = scan.nextLine();
 		int n = Integer.parseInt(answer);
 
-		int dice1 = (int) (Math.random() * n + 1);
-		int dice2 = (int) (Math.random() * n + 1);
+			int dice1 = generateRandomDieRoll(n);
+			int dice2 = generateRandomDieRoll(n);
+
 			System.out.println("Roll" + " " + m + ": " + " \n" + dice1 + " \n" + dice2);
 		
 		System.out.println("Roll again?(y/n:)");
@@ -34,4 +27,11 @@ public class lab6 {
 		
 			 System.out.println("Good Bye"); 
 			 scan.close(); }
+
+	public static int generateRandomDieRoll(int n) {
+
+		int dice = (int) (Math.random() * n + 1);
+		return dice;
+
+	}
 	}
